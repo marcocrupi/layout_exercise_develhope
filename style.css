@@ -143,5 +143,6 @@ footer p {
 @media screen and (max-width: 1323px) {
   section {
     margin-right: 0px;
+    margin-bottom: 1rem;
   }
 }

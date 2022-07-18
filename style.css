@@ -24,6 +24,20 @@ a {
   color: white;
 }
 
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+  background-color: rgb(255, 255, 255);
+}
+
 .topHeader {
   padding: 10px;
   background-color: orange;
@@ -46,15 +60,16 @@ nav {
   height: 60px;
   display: flex;
   justify-content: flex-start;
+  flex-wrap: nowrap;
   align-items: center;
+  white-space:nowrap
 }
 
 nav a {
   background-color: rgb(254, 197, 91);
-  margin-right: 2px;
   color: rgb(0, 0, 0);
+  margin-right: -3px;
   font-size: 1rem;
-  height: 60px;
   padding: 20px 20px;
   text-decoration: underline;
   font-weight: bold;
@@ -146,3 +161,49 @@ footer p {
     margin-bottom: 1rem;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  
+  nav {
+    justify-content: flex-end;
+  }
+
+  .hamburger {
+    display: block;
+    margin-right: 20px;
+  }
+
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    display: flex;
+    position: fixed;
+    right: -100%;
+    top: 195px;
+    gap: 0;
+    flex-direction: column;
+    background-color: rgb(105, 70, 1);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-item {
+    margin: 1px 0;
+  }
+
+  .nav-menu.active {
+    right:0;
+  }
+}
+

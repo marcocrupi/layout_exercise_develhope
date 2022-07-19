@@ -207,3 +207,14 @@ footer p {
   }
 }
 
+@media screen and (max-width: 420px) {
+  .nav-menu {
+    top: 208px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .nav-menu {
+    top: 245px;
+  }
+}
